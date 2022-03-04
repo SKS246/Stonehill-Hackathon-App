@@ -14,6 +14,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,6 +31,7 @@ public class Home2Activity extends AppCompatActivity implements NavigationView.O
 
     private DrawerLayout drawerLayout;
     private Toolbar toolbar;
+    private RelativeLayout Electrician, Carpenter;
 
     private TextView navhead_email;
 
@@ -69,6 +71,18 @@ public class Home2Activity extends AppCompatActivity implements NavigationView.O
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
                 Toast.makeText(Home2Activity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        Electrician = findViewById(R.id.Electrician);
+
+        Electrician.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Home2Activity.this, RecyclerActivity.class);
+                intent.putExtra("prof", "Electrician");
+                startActivity(intent);
+                finish();
             }
         });
     }

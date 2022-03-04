@@ -90,7 +90,7 @@ public class LoginActivity extends AppCompatActivity {
                                 Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                                 startActivity(intent);
                                 finish();
-                                Toast.makeText(LoginActivity.this, "Logged in!" + isEmployer, Toast.LENGTH_SHORT).show();
+                                Toast.makeText(LoginActivity.this, "Logged in!", Toast.LENGTH_SHORT).show();
                             }else{
                                 Toast.makeText(LoginActivity.this, "Login Failed" + task.getException().toString(), Toast.LENGTH_SHORT).show();
                             }
