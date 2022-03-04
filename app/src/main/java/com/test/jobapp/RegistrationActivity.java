@@ -33,6 +33,7 @@ public class RegistrationActivity extends AppCompatActivity {
     private DatabaseReference reference;
     private ProgressDialog loader;
     private String onlineUserID = "";
+    private Boolean isemployer = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,10 +63,15 @@ public class RegistrationActivity extends AppCompatActivity {
         switchbutt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(RegistrationActivity.this, RegistrationActivity2.class);
-                startActivity(intent);
-                Toast.makeText(RegistrationActivity.this, "Switch Success", Toast.LENGTH_SHORT).show();
-                finish();
+                isemployer = !isemployer;
+                Toast.makeText(RegistrationActivity.this, "Switched", Toast.LENGTH_SHORT).show();
+
+                if(isemployer){
+                    switchbutt.setText("Sign up as an employee");
+                }
+                else{
+                    switchbutt.setText("Sign up as an employer");
+                }
             }
         });
 
@@ -105,7 +111,7 @@ public class RegistrationActivity extends AppCompatActivity {
                                 hashMap.put("username", Email);
                                 hashMap.put("fullname", fullName);
                                 hashMap.put("id", onlineUserID);
-                                hashMap.put("type", "employee");
+                                hashMap.put("employer", isemployer);
                                 reference.updateChildren(hashMap).addOnCompleteListener(new OnCompleteListener() {
                                     @Override
                                     public void onComplete(@NonNull Task task) {
