@@ -126,7 +126,7 @@ public class RegistrationActivity extends AppCompatActivity {
                                     }
                                 });
 
-                                Intent intent = new Intent(RegistrationActivity.this, HomeActivity.class);
+                                Intent intent = new Intent(RegistrationActivity.this, JobProfActivity.class);
                                 startActivity(intent);
                                 finish();
                                 loader.dismiss();

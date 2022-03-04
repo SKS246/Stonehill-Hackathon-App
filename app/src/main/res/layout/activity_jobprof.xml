@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".JobProfActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/askQToolBar"
+        android:background="@color/theme1"
+        android:elevation="4dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Create your Job Profile"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/theme1"
+        android:layout_margin="20dp" />
+
+    <EditText
+        android:id="@+id/NameText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Name here"
+        android:layout_margin="20dp"
+        android:textSize="18sp"
+        android:textColor="@color/theme1"
+        android:textColorHint="@color/theme2"
+        android:backgroundTint="@color/theme2"/>
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:entries="@array/topics"/>
+
+    <EditText
+        android:id="@+id/BioText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Bio here"
+        android:layout_margin="20dp"
+        android:textSize="18sp"
+        android:textColor="@color/theme1"
+        android:textColorHint="@color/theme2"
+        android:backgroundTint="@color/theme2"/>
+
+
+    <ImageView
+        android:id="@+id/QuesionImg"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/ic_image"
+        android:layout_margin="20dp"
+        android:layout_gravity="center"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            android:backgroundTint="@color/theme1"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            android:layout_margin="20dp"
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/post"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Post"
+            android:backgroundTint="@color/theme1"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:layout_margin="20dp"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/RegQ"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Aren't a worker? Employ one."
+        android:layout_marginHorizontal="20dp"
+        android:layout_gravity="center"
+        android:textColor="@color/theme1"/>
+
+</LinearLayout>

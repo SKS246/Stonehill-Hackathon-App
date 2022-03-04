@@ -20,7 +20,7 @@
             <ImageView
                 android:layout_width="67dp"
                 android:layout_height="40dp"
-                android:padding="10dp"
+                android:padding="10"
                 android:src="@drawable/general_back_icon" />
 
             <ImageView
@@ -224,6 +224,14 @@
                 android:src="@drawable/electrician_logo" />
 
         </RelativeLayout>
+
+
+
+        
+
+
+
+
 
     </LinearLayout>
 

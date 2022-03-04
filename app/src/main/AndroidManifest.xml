@@ -19,7 +19,7 @@
             android:name=".RegistrationActivity"
             android:exported="false" />
         <activity
-            android:name=".HomeActivity"
+            android:name=".JobProfActivity"
             android:exported="false" />
         <activity
             android:name=".LoginActivity"
