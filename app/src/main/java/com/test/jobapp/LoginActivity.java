@@ -42,11 +42,11 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user = mAuth.getCurrentUser();
-//                if(user != null){
-//                    Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
-//                    startActivity(intent);
-//                    finish();
-//                }
+                if(user != null){
+                    Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
             }
         };
 
@@ -60,9 +60,9 @@ public class LoginActivity extends AppCompatActivity {
         question.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Intent intent = new Intent(LoginActivity.this, RegistrationActivity.class);
-//                startActivity(intent);
-//                finish();
+                Intent intent = new Intent(LoginActivity.this, RegistrationActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
 
@@ -87,9 +87,9 @@ public class LoginActivity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if(task.isSuccessful()){
                                 Toast.makeText(LoginActivity.this, "Logged in!", Toast.LENGTH_SHORT).show();
-//                                Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
-//                                startActivity(intent);
-//                                finish();
+                                Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                                startActivity(intent);
+                                finish();
                             }else{
                                 Toast.makeText(LoginActivity.this, "Login Failed" + task.getException().toString(), Toast.LENGTH_SHORT).show();
                             }
