@@ -87,7 +87,7 @@ public class LoginActivity extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if(task.isSuccessful()){
-                                Intent intent = new Intent(LoginActivity.this, JobProfActivity.class);
+                                Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                                 startActivity(intent);
                                 finish();
                                 Toast.makeText(LoginActivity.this, "Logged in!" + isEmployer, Toast.LENGTH_SHORT).show();

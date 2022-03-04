@@ -49,7 +49,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         drawerLayout = findViewById(R.id.drawer_layout);
         toolbar = findViewById(R.id.homeToolBar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Mental Mentor");
+        getSupportActionBar().setTitle("JobApp");
 
         recyclerView = findViewById(R.id.recyclerView);
         progressCircular = findViewById(R.id.progBar);

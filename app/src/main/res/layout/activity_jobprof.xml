@@ -92,7 +92,7 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/RegQ"
+        android:id="@+id/EmpQ"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Aren't a worker? Employ one."

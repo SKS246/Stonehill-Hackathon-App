@@ -6,7 +6,7 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string-array name="topics">
-        <item>Select Topic</item>
+        <item>Select Profession</item>
         <item>Carpenter</item>
         <item>Electrician</item>
         <item>Mechanic</item>
