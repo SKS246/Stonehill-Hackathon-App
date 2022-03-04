@@ -28,28 +28,21 @@
                 android:layout_width="30dp"
                 android:layout_height="30dp"/>
 
-            <TextView
-                android:text="Email"
+            <Button
+                android:text="Send Offer"
                 android:layout_marginStart="10dp"
                 android:textSize="14sp"
                 android:textStyle="bold"
                 android:layout_gravity="center"
-                android:textColor="#605E5E"
+                android:gravity="center"
+                android:textColor="@color/black"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:background="@color/theme2"/>
 
 
 
         </LinearLayout>
-        <TextView
-            android:text="johndove@gmail.com"
-            android:textStyle="bold"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            android:layout_marginStart="25dp"
-            android:layout_marginBottom="15dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
 
 
     </LinearLayout>
