@@ -209,12 +209,12 @@ public class JobProfActivity extends AppCompatActivity {
                     String postid = ref.push().getKey();
 
                     HashMap<String, Object> hashMap = new HashMap<>();
-                    hashMap.put("User id", postid);
-                    hashMap.put("User name", getNText());
+                    hashMap.put("Userid", postid);
+                    hashMap.put("Username", getNText());
                     hashMap.put("Bio", getBText());
                     hashMap.put("Publisher", onlineUserId);
                     hashMap.put("Prof", getJob());
-                    hashMap.put("Asked By", askedByName);
+                    hashMap.put("AskedBy", askedByName);
                     hashMap.put("questionImage", myUrl);
 
                     ref.child(postid).setValue(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {

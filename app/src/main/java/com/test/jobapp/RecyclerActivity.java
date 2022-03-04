@@ -6,6 +6,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
+import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class RecyclerActivity extends AppCompatActivity {
 
     RecyclerView recview;
@@ -17,6 +20,9 @@ public class RecyclerActivity extends AppCompatActivity {
         recview=(RecyclerView)findViewById(R.id.recview);
         recview.setLayoutManager(new LinearLayoutManager(this));
 
-
+        FirebaseRecyclerOptions<WorkerModel> options =
+                new FirebaseRecyclerOptions.Builder<WorkerModel>()
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Worker List"), WorkerModel.class)
+                        .build();
     }
 }
