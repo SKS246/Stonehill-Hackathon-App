@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Home2Activity"
-    android:background="@color/light_white">
+    tools:context=".Home2Activity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,7 +19,7 @@
             <ImageView
                 android:layout_width="67dp"
                 android:layout_height="40dp"
-                android:padding="10"
+                android:padding="10dp"
                 android:src="@drawable/general_back_icon" />
 
             <ImageView
@@ -48,26 +47,29 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
-                android:background="@drawable/background2"
-                android:layout_margin="20dp">
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/background2">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Electrician"
-                    android:textSize="30sp"
                     android:fontFamily="@font/titillium_web"
                     android:padding="25dp"
-                    android:textColor="@color/white"/>
+                    android:text="Electrician"
+                    android:textColor="@color/white"
+                    android:textSize="30sp" />
 
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="expand all"
+                    android:layout_alignParentBottom="true"
                     android:background="#00000000"
                     android:padding="25dp"
-                    android:layout_alignParentBottom="true"
-                    android:textColor="@color/white"/>
+                    android:text="expand all"
+                    android:textColor="@color/white" />
 
             </RelativeLayout>
 
@@ -224,15 +226,6 @@
                 android:src="@drawable/electrician_logo" />
 
         </RelativeLayout>
-
-
-
-        
-
-
-
-
-
     </LinearLayout>
 
 </ScrollView>

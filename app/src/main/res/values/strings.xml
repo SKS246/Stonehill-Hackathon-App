@@ -1,4 +1,18 @@
 <resources>
     <string name="app_name">JobApp</string>
     <string name="app_tagline">Insert Tagline Here</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string-array name="topics">
+        <item>Select Topic</item>
+        <item>Carpenter</item>
+        <item>Electrician</item>
+        <item>Mechanic</item>
+        <item>Plumber</item>
+        <item>Cook</item>
+        <item>Driver</item>
+        <item>House-Help</item>
+    </string-array>
 </resources>

@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/askQToolBar"
-        android:background="@color/theme1"
+        android:background="@color/theme3"
         android:elevation="4dp"/>
 
     <TextView
@@ -40,6 +40,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
+        android:backgroundTint="@color/theme2"
         android:entries="@array/topics"/>
 
     <EditText
@@ -72,7 +73,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Cancel"
-            android:backgroundTint="@color/theme1"
+            android:backgroundTint="@color/theme3"
             android:textColor="@color/white"
             android:textSize="17sp"
             android:layout_margin="20dp"
@@ -83,7 +84,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Post"
-            android:backgroundTint="@color/theme1"
+            android:backgroundTint="@color/theme3"
             android:textColor="@color/white"
             android:textSize="18sp"
             android:layout_margin="20dp"

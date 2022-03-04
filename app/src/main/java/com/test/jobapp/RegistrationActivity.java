@@ -126,9 +126,15 @@ public class RegistrationActivity extends AppCompatActivity {
                                     }
                                 });
 
-                                Intent intent = new Intent(RegistrationActivity.this, JobProfActivity.class);
-                                startActivity(intent);
-                                finish();
+                                if(isemployer){
+                                    Intent intent = new Intent(RegistrationActivity.this, Home2Activity.class);
+                                    startActivity(intent);
+                                    finish();
+                                }else{
+                                    Intent intent = new Intent(RegistrationActivity.this, JobProfActivity.class);
+                                    startActivity(intent);
+                                    finish();
+                                }
                                 loader.dismiss();
                                 return;
                             }
