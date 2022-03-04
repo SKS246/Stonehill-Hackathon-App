@@ -43,7 +43,7 @@ public class JobProfActivity extends AppCompatActivity {
 
     private Toolbar toolbar;
     private Spinner spinner;
-    private EditText BioBox, NameBox;
+    private EditText BioBox, NameBox, NumBox;
     private ImageView imageView;
     private Button cancel, post;
     private TextView EmpQ;
@@ -73,6 +73,7 @@ public class JobProfActivity extends AppCompatActivity {
         spinner = findViewById(R.id.spinner);
         BioBox = findViewById(R.id.BioText);
         NameBox = findViewById(R.id.NameText);
+        NumBox = findViewById(R.id.NumText);
         imageView = findViewById(R.id.QuesionImg);
         cancel = findViewById(R.id.cancel);
         post = findViewById(R.id.post);
@@ -157,6 +158,10 @@ public class JobProfActivity extends AppCompatActivity {
         return NameBox.getText().toString().trim();
     }
 
+    String getNumText(){
+        return NumBox.getText().toString().trim();
+    }
+
     String getJob(){
         return spinner.getSelectedItem().toString();
     }
@@ -209,7 +214,7 @@ public class JobProfActivity extends AppCompatActivity {
                     String postid = ref.push().getKey();
 
                     HashMap<String, Object> hashMap = new HashMap<>();
-                    hashMap.put("Userid", postid);
+                    hashMap.put("UserNum", getNumText());
                     hashMap.put("Username", getNText());
                     hashMap.put("Bio", getBText());
                     hashMap.put("Publisher", onlineUserId);
@@ -248,8 +253,8 @@ public class JobProfActivity extends AppCompatActivity {
         String postid = ref.push().getKey();
 
         HashMap<String, Object> hashMap = new HashMap<>();
-        hashMap.put("User id", postid);
-        hashMap.put("User name", getNText());
+        hashMap.put("UserNum", getNumText());
+        hashMap.put("Username", getNText());
         hashMap.put("Bio", getBText());
         hashMap.put("Publisher", onlineUserId);
         hashMap.put("Prof", getJob());

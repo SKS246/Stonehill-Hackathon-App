@@ -1,18 +1,27 @@
 package com.test.jobapp;
 
 public class WorkerModel {
-    String Username, Bio, Prof, questionImage, AskedBy;
+    String Username, Bio, Prof, questionImage, AskedBy, UserNum;
     WorkerModel()
     {
 
     }
 
-    public WorkerModel(String username, String bio, String prof, String questionImage, String askedBy) {
+    public WorkerModel(String username, String bio, String prof, String questionImage, String askedBy, String userNum) {
         Username = username;
         Bio = bio;
         Prof = prof;
         this.questionImage = questionImage;
         AskedBy = askedBy;
+        UserNum = userNum;
+    }
+
+    public String getUserNum() {
+        return UserNum;
+    }
+
+    public void setUserNum(String userNum) {
+        UserNum = userNum;
     }
 
     public String getUsername() {
