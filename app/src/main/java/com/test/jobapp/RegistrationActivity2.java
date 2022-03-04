@@ -23,7 +23,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.HashMap;
 import java.util.Map;
 
-public class RegistrationActivity extends AppCompatActivity {
+public class RegistrationActivity2 extends AppCompatActivity {
 
     private EditText fullname, email, password;
     private Button register, switchbutt;
@@ -53,7 +53,7 @@ public class RegistrationActivity extends AppCompatActivity {
         question.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(RegistrationActivity.this, LoginActivity.class);
+                Intent intent = new Intent(RegistrationActivity2.this, LoginActivity.class);
                 startActivity(intent);
                 finish();
             }
@@ -62,9 +62,8 @@ public class RegistrationActivity extends AppCompatActivity {
         switchbutt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(RegistrationActivity.this, RegistrationActivity2.class);
+                Intent intent = new Intent(RegistrationActivity2.this, RegistrationActivity.class);
                 startActivity(intent);
-                Toast.makeText(RegistrationActivity.this, "Switch Success", Toast.LENGTH_SHORT).show();
                 finish();
             }
         });
@@ -95,9 +94,9 @@ public class RegistrationActivity extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if(!task.isSuccessful()){
-                                Toast.makeText(RegistrationActivity.this, "Registration Failed" + task.getException().toString(), Toast.LENGTH_SHORT).show();
+                                Toast.makeText(RegistrationActivity2.this, "Registration Failed" + task.getException().toString(), Toast.LENGTH_SHORT).show();
                             }else {
-                                Toast.makeText(RegistrationActivity.this, "Registration Success", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(RegistrationActivity2.this, "Registration Success", Toast.LENGTH_SHORT).show();
 
                                 onlineUserID = mAuth.getCurrentUser().getUid();
                                 reference = FirebaseDatabase.getInstance().getReference().child("users").child(onlineUserID);
@@ -105,14 +104,14 @@ public class RegistrationActivity extends AppCompatActivity {
                                 hashMap.put("username", Email);
                                 hashMap.put("fullname", fullName);
                                 hashMap.put("id", onlineUserID);
-                                hashMap.put("type", "employee");
+                                hashMap.put("type", "employer");
                                 reference.updateChildren(hashMap).addOnCompleteListener(new OnCompleteListener() {
                                     @Override
                                     public void onComplete(@NonNull Task task) {
                                         if (task.isSuccessful()){
-                                            Toast.makeText(RegistrationActivity.this, "Details set Successfully", Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(RegistrationActivity2.this, "Details set Successfully", Toast.LENGTH_SHORT).show();
                                         }else {
-                                            Toast.makeText(RegistrationActivity.this, "Data failed to upload" + task.getException().toString(), Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(RegistrationActivity2.this, "Data failed to upload" + task.getException().toString(), Toast.LENGTH_SHORT).show();
                                         }
 
                                         finish();
@@ -120,7 +119,7 @@ public class RegistrationActivity extends AppCompatActivity {
                                     }
                                 });
 
-                                Intent intent = new Intent(RegistrationActivity.this, HomeActivity.class);
+                                Intent intent = new Intent(RegistrationActivity2.this, HomeActivity.class);
                                 startActivity(intent);
                                 finish();
                                 loader.dismiss();
