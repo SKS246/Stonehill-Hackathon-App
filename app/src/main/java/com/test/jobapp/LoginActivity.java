@@ -18,6 +18,9 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -86,10 +89,21 @@ public class LoginActivity extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if(task.isSuccessful()){
+                                DatabaseReference reference = FirebaseDatabase.getInstance().getReference("users");
+                                Query query = reference.orderByChild("username").equalTo(email);
+                                String isEmployer = query.getRef().child("employer").toString();
                                 Toast.makeText(LoginActivity.this, "Logged in!", Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
-                                startActivity(intent);
-                                finish();
+
+                                if (isEmployer == "true"){
+                                    Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                                    startActivity(intent);
+                                    finish();
+                                }
+                                else{
+                                    Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                                    startActivity(intent);
+                                    finish();
+                                }
                             }else{
                                 Toast.makeText(LoginActivity.this, "Login Failed" + task.getException().toString(), Toast.LENGTH_SHORT).show();
                             }
