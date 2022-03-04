@@ -82,6 +82,7 @@
 
                 <TextView
                     android:text="Some Text"
+                    android:id="@+id/BioText1"
                     android:textSize="17sp"
                     android:textColor="@color/theme1"
                     android:textStyle="bold"

@@ -107,7 +107,7 @@ public class JobProfActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 if(spinner.getSelectedItem().equals("Select Topic")){
-                    Toast.makeText(JobProfActivity.this, "Please Select a Valid Topic", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(JobProfActivity.this, "Please Select a Valid Profession", Toast.LENGTH_SHORT).show();
                 }
             }
 

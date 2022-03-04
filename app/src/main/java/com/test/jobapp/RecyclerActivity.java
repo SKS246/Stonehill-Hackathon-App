@@ -10,10 +10,12 @@ import android.os.Bundle;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class RecyclerActivity extends AppCompatActivity {
+public class RecyclerActivity extends AppCompatActivity{
 
     RecyclerView recview;
     WorkerAdapter adapter;
+
+    public String UserName, Prof, Bio, Num, AskedBy;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +36,31 @@ public class RecyclerActivity extends AppCompatActivity {
 
         adapter = new WorkerAdapter(options);
         recview.setAdapter(adapter);
+
+        adapter.setOnItemClickListener(new WorkerAdapter.onItemClickListener() {
+            @Override
+            public void onItemClick(int position) {
+                AskedBy = options.getSnapshots().get(position).getPublisher();
+
+                Intent intent2 = new Intent(RecyclerActivity.this, OfferActivity.class);
+                intent2.putExtra("host", AskedBy);
+                startActivity(intent2);
+                finish();
+
+//                UserName = options.getSnapshots().get(position).getUsername();
+//                Prof = options.getSnapshots().get(position).getProf();
+//                Bio = options.getSnapshots().get(position).getBio();
+//                Num = options.getSnapshots().get(position).getUserNum();
+//
+//                Intent intent1 = new Intent(RecyclerActivity.this, Profile2Activity.class);
+//                intent1.putExtra("username", UserName);
+//                intent1.putExtra("prof", Prof);
+//                intent1.putExtra("bio", Bio);
+//                intent1.putExtra("Num", Num);
+//                startActivity(intent1);
+//                finish();
+            }
+        });
     }
 
     @Override

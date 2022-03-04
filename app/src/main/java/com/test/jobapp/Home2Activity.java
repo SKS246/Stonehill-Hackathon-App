@@ -31,7 +31,7 @@ public class Home2Activity extends AppCompatActivity implements NavigationView.O
 
     private DrawerLayout drawerLayout;
     private Toolbar toolbar;
-    private RelativeLayout Electrician, Carpenter;
+    private RelativeLayout Electrician, Carpenter, Plumber, Mechanic, Driver, Cook, HouseHelp;
 
     private TextView navhead_email;
 
@@ -75,12 +75,78 @@ public class Home2Activity extends AppCompatActivity implements NavigationView.O
         });
 
         Electrician = findViewById(R.id.Electrician);
+        Carpenter = findViewById(R.id.Carpenter);
+        Mechanic = findViewById(R.id.Mechanic);
+        Plumber = findViewById(R.id.Plumber);
+        Cook = findViewById(R.id.Cook);
+        HouseHelp = findViewById(R.id.HouseHelp);
+        Driver = findViewById(R.id.Driver);
 
         Electrician.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Home2Activity.this, RecyclerActivity.class);
                 intent.putExtra("prof", "Electrician");
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        Carpenter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Home2Activity.this, RecyclerActivity.class);
+                intent.putExtra("prof", "Carpenter");
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        Plumber.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Home2Activity.this, RecyclerActivity.class);
+                intent.putExtra("prof", "Plumber");
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        Driver.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Home2Activity.this, RecyclerActivity.class);
+                intent.putExtra("prof", "Driver");
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        Mechanic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Home2Activity.this, RecyclerActivity.class);
+                intent.putExtra("prof", "Mechanic");
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        Cook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Home2Activity.this, RecyclerActivity.class);
+                intent.putExtra("prof", "Cook");
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        HouseHelp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Home2Activity.this, RecyclerActivity.class);
+                intent.putExtra("prof", "House-Help");
                 startActivity(intent);
                 finish();
             }
@@ -99,10 +165,10 @@ public class Home2Activity extends AppCompatActivity implements NavigationView.O
                 startActivity(intent2);
                 break;
 
-//            case R.id.nav_account:
-//                Intent intent3 = new Intent(HomeActivity.this, AccountActivity.class);
-//                startActivity(intent3);
-//                break;
+            case R.id.nav_account:
+                Intent intent3 = new Intent(Home2Activity.this, HomeActivity.class);
+                startActivity(intent3);
+                break;
 
         }
         drawerLayout.closeDrawer(GravityCompat.START);

@@ -43,6 +43,7 @@
         </LinearLayout>
         <TextView
             android:text="+12 3456789012"
+            android:id="@+id/NumText1"
             android:textStyle="bold"
             android:textColor="@color/theme2"
             android:textSize="18sp"

@@ -15,6 +15,15 @@ import com.firebase.ui.database.FirebaseRecyclerOptions;
 
 public class WorkerAdapter extends FirebaseRecyclerAdapter<WorkerModel, WorkerAdapter.myViewHolder> {
 
+    private onItemClickListener mListener;
+    public interface onItemClickListener {
+        void onItemClick(int position);
+    }
+
+    public void setOnItemClickListener(onItemClickListener listener){
+        mListener = listener;
+    }
+
     public WorkerAdapter(@NonNull FirebaseRecyclerOptions<WorkerModel> options) {
         super(options);
     }
@@ -31,7 +40,7 @@ public class WorkerAdapter extends FirebaseRecyclerAdapter<WorkerModel, WorkerAd
     @Override
     public myViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.singlerow, parent, false);
-        return new myViewHolder(view);
+        return new myViewHolder(view, mListener);
     }
 
     class myViewHolder extends RecyclerView.ViewHolder {
@@ -39,12 +48,24 @@ public class WorkerAdapter extends FirebaseRecyclerAdapter<WorkerModel, WorkerAd
         ImageView img;
         TextView Username, Prof, Num;
 
-        public myViewHolder(@NonNull View itemView) {
+        public myViewHolder(@NonNull View itemView, onItemClickListener listener) {
             super(itemView);
-            img = (ImageView)itemView.findViewById(R.id.img1);
-            Username = (TextView)itemView.findViewById(R.id.nametext);
-            Prof = (TextView)itemView.findViewById(R.id.proftext);
-            Num = (TextView)itemView.findViewById(R.id.biotext);
+            img = (ImageView) itemView.findViewById(R.id.img1);
+            Username = (TextView) itemView.findViewById(R.id.nametext);
+            Prof = (TextView) itemView.findViewById(R.id.proftext);
+            Num = (TextView) itemView.findViewById(R.id.biotext);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (listener != null){
+                        int position = getAbsoluteAdapterPosition();
+                        if(position != RecyclerView.NO_POSITION){
+                            listener.onItemClick(position);
+                        }
+                    }
+                }
+            });
         }
     }
 }

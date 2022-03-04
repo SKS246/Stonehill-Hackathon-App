@@ -17,9 +17,11 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -35,14 +37,36 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     private RecyclerView recyclerView;
     private ProgressBar progressCircular;
 
+    private FirebaseAuth mAuth;
+    private FirebaseUser mUser;
+    private String onlineUserId = "";
+
     private TextView navhead_email;
 
     private DatabaseReference userRef;
+
+    RecyclerView recview;
+    OfferAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        mAuth = FirebaseAuth.getInstance();
+        mUser = mAuth.getCurrentUser();
+        onlineUserId = mUser.getUid();
+
+        recview = (RecyclerView)findViewById(R.id.recview);
+        recview.setLayoutManager(new LinearLayoutManager(this));
+
+        FirebaseRecyclerOptions<OffersModel> options =
+                new FirebaseRecyclerOptions.Builder<OffersModel>()
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Offer List").orderByChild("AskedFor").equalTo(onlineUserId), OffersModel.class)
+                        .build();
+
+        adapter = new OfferAdapter(options);
+        recview.setAdapter(adapter);
 
         fab = findViewById(R.id.fab);
 
@@ -51,14 +75,11 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("JobApp");
 
-        recyclerView = findViewById(R.id.recyclerView);
         progressCircular = findViewById(R.id.progBar);
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         linearLayoutManager.setReverseLayout(true);
         linearLayoutManager.setStackFromEnd(true);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(linearLayoutManager);
 
         NavigationView navigationView = findViewById(R.id.navView);
         navigationView.setNavigationItemSelectedListener(this);
@@ -104,14 +125,26 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(intent2);
                 break;
 
-//            case R.id.nav_account:
-//                Intent intent3 = new Intent(HomeActivity.this, AccountActivity.class);
-//                startActivity(intent3);
-//                break;
+            case R.id.nav_account:
+                Intent intent3 = new Intent(HomeActivity.this, Home2Activity.class);
+                startActivity(intent3);
+                break;
 
         }
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        adapter.startListening();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        adapter.stopListening();
     }
 
     @Override

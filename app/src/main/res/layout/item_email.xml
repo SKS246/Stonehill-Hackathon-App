@@ -13,32 +13,25 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@color/theme2">
 
         <LinearLayout
             android:orientation="horizontal"
             android:padding="3dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <ImageView
-                android:padding="2dp"
-                android:src="@drawable/ic_email"
-                android:layout_marginStart="5dp"
-                android:layout_width="30dp"
-                android:layout_height="30dp"/>
+            android:layout_height="wrap_content"
+            android:background="@color/theme2">
 
             <TextView
-                android:text="Send Offer"
-                android:layout_marginStart="10dp"
+                android:text="Send Job Offer"
                 android:textSize="14sp"
                 android:textStyle="bold"
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:textColor="@color/theme1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@color/teal_200"/>
+                android:layout_width="match_parent"
+                android:layout_height="32dp"/>
 
 
 

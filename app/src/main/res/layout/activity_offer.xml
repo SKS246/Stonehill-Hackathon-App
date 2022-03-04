@@ -36,7 +36,7 @@
             android:orientation="vertical">
 
             <EditText
-                android:id="@+id/NameText"
+                android:id="@+id/NameTextBar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Enter Name here"
@@ -47,7 +47,7 @@
                 android:backgroundTint="@color/theme2"/>
 
             <EditText
-                android:id="@+id/NumText"
+                android:id="@+id/NumTextBar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Enter Number here"
@@ -65,7 +65,7 @@
 
 
     <EditText
-        android:id="@+id/BioText"
+        android:id="@+id/AddText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Enter Address here"

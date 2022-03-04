@@ -29,6 +29,7 @@
 
                 <TextView
                     android:layout_marginTop="15px"
+                    android:id="@+id/ProfName"
                     android:text="John Doe"
                     android:textSize="20sp"
                     android:textStyle="bold"
@@ -39,6 +40,7 @@
 
                 <TextView
                     android:layout_marginTop="2dp"
+                    android:id="@+id/Profprof"
                     android:text="Carpenter"
                     android:textSize="13sp"
                     android:textStyle="normal"
