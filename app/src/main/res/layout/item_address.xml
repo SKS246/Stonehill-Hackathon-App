@@ -39,7 +39,7 @@
                     android:textSize="16sp"
                     android:layout_margin="5dp"
                     android:textStyle="bold|normal"
-                    android:textColor="#F8554A4A"
+                    android:textColor="@color/theme1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
                 
@@ -83,7 +83,7 @@
                 <TextView
                     android:text="Some Text"
                     android:textSize="17sp"
-                    android:textColor="@color/black"
+                    android:textColor="@color/theme1"
                     android:textStyle="bold"
                     android:gravity="center"
                     android:layout_width="wrap_content"

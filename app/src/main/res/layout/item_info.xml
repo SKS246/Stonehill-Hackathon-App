@@ -34,7 +34,7 @@
                 android:textSize="14sp"
                 android:textStyle="bold"
                 android:layout_gravity="center"
-                android:textColor="#605E5E"
+                android:textColor="@color/theme1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
@@ -44,7 +44,7 @@
         <TextView
             android:text="+12 3456789012"
             android:textStyle="bold"
-            android:textColor="@color/black"
+            android:textColor="@color/theme2"
             android:textSize="18sp"
             android:layout_marginStart="25dp"
             android:layout_marginBottom="15dp"
