@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">JobApp</string>
+    <string name="app_tagline">Insert Tagline Here</string>
 </resources>
