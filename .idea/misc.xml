@@ -7,9 +7,11 @@
         <entry key="app/src/main/res/drawable/item_row.xml" value="0.191" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.15520833333333334" />
         <entry key="app/src/main/res/layout/activity_home2.xml" value="0.29153340657552085" />
+        <entry key="app/src/main/res/layout/activity_jobprof.xml" value="0.18614130434782608" />
         <entry key="app/src/main/res/layout/activity_list.xml" value="0.18614130434782608" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.29352722167968753" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/activity_offer.xml" value="0.2852044146993886" />
         <entry key="app/src/main/res/layout/activity_profile.xml" value="0.28626607259114584" />
         <entry key="app/src/main/res/layout/activity_profile2.xml" value="0.2630990069845448" />
         <entry key="app/src/main/res/layout/activity_recycler.xml" value="0.33" />
