@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
 
 import android.app.ProgressDialog;
 import android.content.ContentResolver;
@@ -286,5 +287,10 @@ public class JobProfActivity extends AppCompatActivity {
             imageUrl = data.getData();
             imageView.setImageURI(imageUrl);
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        finish();
     }
 }

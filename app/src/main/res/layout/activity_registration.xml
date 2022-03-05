@@ -10,13 +10,25 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Sign up to continue"
+        android:id="@+id/sumsg"
+        android:text="Continue Employee Sign Up"
         android:textSize="25sp"
         android:textStyle="bold"
         android:textColor="@color/theme1"
         android:gravity="center"
         android:layout_marginHorizontal="20dp"
         android:layout_marginVertical="50dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="OR"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:textColor="@color/theme1"
+        android:gravity="center"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="0dp"/>
 
     <Button
         android:id="@+id/emplButton"

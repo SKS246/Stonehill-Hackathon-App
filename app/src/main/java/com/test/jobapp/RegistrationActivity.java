@@ -27,7 +27,7 @@ public class RegistrationActivity extends AppCompatActivity {
 
     private EditText fullname, email, password;
     private Button register, switchbutt;
-    private TextView question;
+    private TextView question, signupmsg;
 
     private FirebaseAuth mAuth;
     private DatabaseReference reference;
@@ -47,6 +47,8 @@ public class RegistrationActivity extends AppCompatActivity {
         register = findViewById(R.id.regButton);
         switchbutt = findViewById(R.id.emplButton);
         question = findViewById(R.id.LoginQ);
+        signupmsg = findViewById(R.id.sumsg);
+
 
         mAuth = FirebaseAuth.getInstance();
         loader = new ProgressDialog(this);
@@ -68,9 +70,11 @@ public class RegistrationActivity extends AppCompatActivity {
 
                 if(isemployer){
                     switchbutt.setText("Sign up as an employee");
+                    signupmsg.setText("Continue Employer Sign Up");
                 }
                 else{
                     switchbutt.setText("Sign up as an employer");
+                    signupmsg.setText("Continue Employee Sign Up");
                 }
             }
         });

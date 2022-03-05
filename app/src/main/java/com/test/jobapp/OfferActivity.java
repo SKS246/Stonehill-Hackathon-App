@@ -5,7 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.app.ProgressDialog;
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.content.ContentResolver;
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -36,13 +39,13 @@ public class OfferActivity extends AppCompatActivity {
 
     private Toolbar toolbar;
     private EditText AddBox, NameBox, NumBox, MsgBox;
-    private Button cancel, send;
+    private Button cancel, send, copy;
 
     private ProgressDialog loader;
 
     private FirebaseAuth mAuth;
     private FirebaseUser mUser;
-    private String onlineUserId = "", offerFor;
+    private String onlineUserId = "", offerFor, phoneNum;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +55,7 @@ public class OfferActivity extends AppCompatActivity {
         Intent intent = getIntent();
 
         offerFor = intent.getStringExtra("host");
+        phoneNum = intent.getStringExtra("number");
 
         toolbar = findViewById(R.id.askQToolBar);
         setSupportActionBar(toolbar);
@@ -63,11 +67,22 @@ public class OfferActivity extends AppCompatActivity {
         MsgBox = findViewById(R.id.MessageText);
         cancel = findViewById(R.id.cancel);
         send = findViewById(R.id.post);
+        copy = findViewById(R.id.copy);
 
         loader = new ProgressDialog(this);
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
         onlineUserId = mUser.getUid();
+
+        copy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+                ClipData clip = ClipData.newPlainText("PhoneNo.", phoneNum);
+                clipboard.setPrimaryClip(clip);
+                Toast.makeText(OfferActivity.this, "Copied to Clipboard!", Toast.LENGTH_SHORT).show();
+            }
+        });
 
         cancel.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -149,5 +164,10 @@ public class OfferActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        finish();
     }
 }
