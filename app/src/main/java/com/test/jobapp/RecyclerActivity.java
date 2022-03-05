@@ -15,7 +15,7 @@ public class RecyclerActivity extends AppCompatActivity{
     RecyclerView recview;
     WorkerAdapter adapter;
 
-    public String UserName, Prof, Bio, Number, AskedBy;
+    public String UserName, Prof, Bio, Num, my_url, AskedBy;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,27 +40,31 @@ public class RecyclerActivity extends AppCompatActivity{
         adapter.setOnItemClickListener(new WorkerAdapter.onItemClickListener() {
             @Override
             public void onItemClick(int position) {
-                AskedBy = options.getSnapshots().get(position).getPublisher();
-                Number = options.getSnapshots().get(position).getUserNum();
 
-                Intent intent2 = new Intent(RecyclerActivity.this, OfferActivity.class);
-                intent2.putExtra("host", AskedBy);
-                intent2.putExtra("number", Number);
-                startActivity(intent2);
-                finish();
-
-//                UserName = options.getSnapshots().get(position).getUsername();
-//                Prof = options.getSnapshots().get(position).getProf();
-//                Bio = options.getSnapshots().get(position).getBio();
-//                Num = options.getSnapshots().get(position).getUserNum();
+//                Number = options.getSnapshots().get(position).getUserNum();
 //
-//                Intent intent1 = new Intent(RecyclerActivity.this, Profile2Activity.class);
-//                intent1.putExtra("username", UserName);
-//                intent1.putExtra("prof", Prof);
-//                intent1.putExtra("bio", Bio);
-//                intent1.putExtra("Num", Num);
-//                startActivity(intent1);
+//                Intent intent2 = new Intent(RecyclerActivity.this, OfferActivity.class);
+
+//                intent2.putExtra("number", Number);
+//                startActivity(intent2);
 //                finish();
+
+                UserName = options.getSnapshots().get(position).getUsername();
+                Prof = options.getSnapshots().get(position).getProf();
+                Bio = options.getSnapshots().get(position).getBio();
+                Num = options.getSnapshots().get(position).getUserNum();
+                AskedBy = options.getSnapshots().get(position).getPublisher();
+                my_url = options.getSnapshots().get(position).getQuestionImage();
+
+                Intent intent1 = new Intent(RecyclerActivity.this, WorkerProfile.class);
+                intent1.putExtra("host", AskedBy);
+                intent1.putExtra("username", UserName);
+                intent1.putExtra("prof", Prof);
+                intent1.putExtra("bio", Bio);
+                intent1.putExtra("Num", Num);
+                intent1.putExtra("url", my_url);
+                startActivity(intent1);
+                finish();
             }
         });
     }
